@@ -54,6 +54,9 @@
 /* ==========================================================================================
  - GLOBALES
 ========================================================================================== */
+html {
+  scroll-behavior: smooth;
+}
 *,
 *::after,
 *::before {
@@ -126,6 +129,12 @@ h6 {
   align-items: center;
   flex: 1;
 }
+.nav__logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
 
 @media screen and (max-width: 540px) {
   .nav__logo {
@@ -141,6 +150,15 @@ h6 {
   font-family: "Aeonik-Medium";
   color: var(--color-blanco);
   font-size: 24px;
+}
+
+@media screen and (min-width: 1920px) {
+  .nav__logo img {
+    width: 65px;
+  }
+  .nav__logo p {
+    font-size: 34px;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -175,6 +193,28 @@ h6 {
   font-size: 20px;
   text-align: center;
   margin-right: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s ease;
+  z-index: 10;
+}
+.item::before {
+  content: "";
+  border: 1px solid var(--color-blanco);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-blanco);
+  transition: 0.5s ease;
+  z-index: -1;
+}
+.item:hover {
+  color: var(--color-oscuro);
+}
+.item:hover::before {
+  left: 0;
 }
 .nav__btn-inscribirme {
   flex: 1;
@@ -188,10 +228,25 @@ h6 {
   position: relative;
 }
 
+@media screen and (min-width: 1920px) {
+  .item {
+    width: 16rem;
+    font-size: 26px;
+  }
+  .nav__btn-inscribirme a {
+    padding: 0.5rem 4rem;
+    font-size: 26px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .nav__btn-inscribirme {
     flex: none;
   }
+}
+
+.btn:hover > .cursor {
+  left: 50%;
 }
 
 .cursor {
@@ -199,6 +254,7 @@ h6 {
   position: absolute;
   top: 80%;
   left: 90%;
+  transition: 0.5s ease;
 }
 .hero {
   display: flex;
@@ -224,6 +280,15 @@ h6 {
   font-size: 78px;
 }
 
+@media screen and (min-width: 1920px) {
+  .titulo {
+    font-size: 86px;
+  }
+  .hero {
+    margin-top: 6rem;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .titulo {
     font-size: 60px;
@@ -238,6 +303,15 @@ h6 {
 .nombre span {
   font-size: 78px;
   color: var(--color-gris);
+}
+
+@media screen and (min-width: 1920px) {
+  .nombre {
+    font-size: 250px;
+  }
+  .nombre span {
+    font-size: 88px;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -264,6 +338,12 @@ h6 {
 
 .hero__imagen img {
   width: 25rem;
+}
+
+@media screen and (min-width: 1920px) {
+  .hero__imagen img {
+    width: 78%;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -297,6 +377,11 @@ h6 {
   padding: 0.25rem 9.25rem 0.25rem 2rem;
   font-size: 40px;
 }
+@media screen and (min-width: 1920px) {
+  .inferior__btn-inscribirme {
+    font-size: 55px;
+  }
+}
 @media screen and (max-width: 540px) {
   .inferior__btn-inscribirme {
     display: none;
@@ -327,6 +412,15 @@ h6 {
   background-color: var(--color-blanco);
 }
 
+@media screen and (min-width: 1920px) {
+  .dias,
+  .horas,
+  .minutos,
+  .segundos {
+    width: 125px;
+    height: 125px;
+  }
+}
 @media screen and (max-width: 540px) {
   .dias,
   .horas,
@@ -364,6 +458,12 @@ h6 {
   font-size: 50px;
 }
 
+@media screen and (min-width: 1920px) {
+  .numeros {
+    font-size: 65px;
+    margin-top: 2rem;
+  }
+}
 @media screen and (max-width: 540px) {
   .numeros {
     font-size: 40px;
@@ -406,6 +506,12 @@ h6 {
   position: relative;
 }
 
+@media screen and (min-width: 1920px) {
+  .informacion {
+    background-size: 165rem, 40rem, 15rem;
+    
+  }
+}
 @media screen and (max-width: 540px) {
   .informacion {
     display: none;
@@ -463,6 +569,36 @@ h6 {
   color: rgba(0, 0, 0, 0.8);
 }
 
+@media screen and (min-width: 1920px) {
+  .info__concepto {
+    top: 19%;
+    left: 22%;
+    font-size: 40px;
+  }
+  .info__concepto-contenido {
+    top: 35%;
+    left: 18.5%;
+    font-size: 24px;
+    width: 20rem;
+  }
+  .info__objetivos {
+    top: 25%;
+    left: 58%;
+    font-size: 38px;
+  }
+  .info__objetivos-c1 {
+    top: 44%;
+    left: 58%;
+    width: 16rem;
+    font-size: 18px;
+  }
+  .info__objetivos-c2 {
+    top: 73%;
+    left: 58%;
+    width: 16rem;
+    font-size: 18px;
+  }
+}
 @media screen and (max-width: 540px) {
   .info__concepto {
     top: 18%;
@@ -505,6 +641,11 @@ h6 {
   padding-top: 16rem;
 }
 
+@media screen and (min-width: 1920px) {
+  .reto-requisitos {
+    height: 205vh;
+  }
+}
 @media screen and (max-width: 540px) {
   .reto-requisitos {
     background-position: right;
@@ -524,6 +665,12 @@ h6 {
   box-shadow: 10px 10px 0px 0px rgb(0, 0, 0);
 }
 
+@media screen and (min-width: 1920px) {
+  .reto-contenedor {
+    margin-top: 6rem;
+    width: 60%;
+  }
+}
 @media screen and (max-width: 540px) {
   .reto-contenedor {
     flex-direction: column;
@@ -547,6 +694,11 @@ h6 {
   margin: 0;
 }
 
+@media screen and (min-width: 1920px) {
+  .reto h1 {
+    font-size: 120px;
+  }
+}
 @media screen and (max-width: 540px) {
   .reto h1 {
     font-size: 45px;
@@ -568,6 +720,13 @@ h6 {
   font-size: 25px;
 }
 
+@media screen and (min-width: 1920px) {
+  .reto-contenido p {
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .reto-contenido p {
     text-align: center;
@@ -581,6 +740,11 @@ h6 {
   text-align: center;
 }
 
+@media screen and (min-width: 1920px) {
+  .requisitos {
+    margin-top: 13rem;
+  }
+}
 @media screen and (max-width: 540px) {
   .requisitos {
     margin-top: 5rem;
@@ -589,6 +753,12 @@ h6 {
 
 .requisitos__titulo {
   font-size: 75px;
+}
+
+@media screen and (min-width: 1920px) {
+  .requisitos__titulo {
+    font-size: 85px;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -602,6 +772,11 @@ h6 {
   font-size: 30px;
 }
 
+@media screen and (min-width: 1920px) {
+  .requisitos__descripcion {
+    font-size: 45px;
+  }
+}
 @media screen and (max-width: 540px) {
   .requisitos__descripcion {
     font-size: 18.5px;
@@ -617,6 +792,22 @@ h6 {
 }
 .iconos-herramientas img {
   width: 7.75rem;
+  transition: 0.5s ease;
+}
+.marvel:hover {
+  transform: translateY(-3rem);
+}
+.sketch:hover {
+  transform: translateY(-3rem);
+}
+.adobexd:hover {
+  transform: translateY(-3rem);
+}
+.figma:hover {
+  transform: translateY(-3rem);
+}
+.invision:hover {
+  transform: translateY(-3rem);
 }
 
 @media screen and (max-width: 540px) {
@@ -625,6 +816,11 @@ h6 {
   }
 }
 
+@media screen and (min-width: 1920px) {
+  .iconos-herramientas img {
+    width: 12rem;
+  }
+}
 @media screen and (max-width: 540px) {
   .iconos-herramientas img {
     width: 4rem;
@@ -641,6 +837,12 @@ h6 {
   position: relative;
 }
 
+@media screen and (min-width: 1920px) {
+  .btn-bases {
+    margin-top: 3rem;
+    font-size: 32px;
+  }
+}
 @media screen and (max-width: 540px) {
   .btn-bases {
     padding: 1.25rem 5rem 1.25rem 1rem;
@@ -666,6 +868,18 @@ h6 {
   border-radius: 50%;
   padding: 1rem;
 }
+
+@media screen and (max-width: 540px) {
+  .agenda__bandera {
+    top: -22rem;
+    left: 50%;
+  }
+  .circle-flag {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
 .agenda__titulo {
   font-size: 75px;
   text-align: center;
@@ -673,6 +887,22 @@ h6 {
   margin: 0;
   color: var(--color-oscuro);
 }
+
+@media screen and (max-width: 1920px) {
+  .agenda__titulo {
+    font-size: 85px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .agenda__titulo {
+    font-size: 45px;
+    position: absolute;
+    top: -12rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .agenda__timeline {
   display: grid;
   grid-template-columns: 1fr 0.75rem 1fr;
@@ -685,6 +915,32 @@ h6 {
 .parte-derecha {
   padding-top: 5rem;
 }
+@keyframes moveup {
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1em);
+    opacity: 1;
+  }
+}
+@keyframes moveup2 {
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1em);
+    opacity: 1;
+  }
+}
+.up {
+  animation: moveup 1.25s infinite alternate ease-in-out;
+}
+.up2 {
+  animation: moveup2 1s infinite alternate ease-in-out;
+}
 .parte-derecha .item-agenda {
   flex-direction: row-reverse;
 }
@@ -694,6 +950,29 @@ h6 {
   align-items: center;
   margin-bottom: 10rem;
 }
+
+@media screen and (max-width: 540px) {
+  .agenda__timeline {
+    font-size: 18px;
+  }
+  .parte-derecha {
+    padding-top: 5rem;
+  }
+  .parte-izquierda {
+    padding-top: 12rem;
+  }
+  .item-agenda {
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    margin-right: 0.25rem;
+  }
+  .parte-derecha .item-agenda {
+    margin-right: 0;
+    margin-left: 0.25rem;
+  }
+}
+
 .descripcion {
   background-color: var(--color-oscuro);
   border-radius: 25px;
@@ -722,6 +1001,29 @@ h6 {
   align-items: center;
   border-radius: 50%;
 }
+
+@media screen and (min-width: 1920px) {
+  .descripcion {
+    width: 22rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .descripcion {
+    width: 10rem;
+  }
+  .descripcion__detalle {
+    font-size: 18px;
+  }
+  .fecha {
+    border-radius: 10px;
+    min-width: 5rem;
+    min-height: 2rem;
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+  }
+}
+
 .parte-derecha .fecha {
   margin-right: 0;
   margin-left: 4.5rem;
@@ -732,6 +1034,13 @@ h6 {
   width: 0.75rem;
   height: 101rem;
 }
+
+@media screen and (max-width: 540px) {
+  .separador {
+    height: 80rem;
+  }
+}
+
 .agenda__copa {
   position: absolute;
   left: 50%;
