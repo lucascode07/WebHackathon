@@ -423,7 +423,7 @@ h6 {
 
 .hero__imagen img {
   width: 25rem;
-  height: auto;
+  height: 486px;
 }
 
 @media screen and (min-width: 1920px) {
@@ -436,7 +436,7 @@ h6 {
 @media screen and (max-width: 540px) {
   .hero__imagen img {
     width: 14rem;
-    height: auto;
+    height: 202px;
   }
 }
 
